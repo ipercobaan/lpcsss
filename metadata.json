@@ -1,0 +1,8 @@
+{
+  "name": "Blackframe Studio - Video Engine",
+  "description": "Professional landing page for Blackframe Studio, a premium video creation engine, featuring a manual payment system for digital assets.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
