@@ -3,18 +3,12 @@ import React from 'react';
 
 interface HeroProps {
   onCtaClick: () => void;
+  onCalcClick: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
-  const WHATSAPP_NUMBER = '6282124335700';
-  
-  const handleWhatsAppClick = () => {
-    const message = encodeURIComponent("Halo Blackframe Studio! Saya ingin menghitung potensi monetisasi konten saya.");
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
-  };
-
+const Hero: React.FC<HeroProps> = ({ onCtaClick, onCalcClick }) => {
   return (
-    <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section id="home" className="relative pt-44 pb-20 lg:pt-56 lg:pb-32 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-blue-600/20 to-transparent blur-[120px] pointer-events-none"></div>
       
@@ -39,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <button 
-            onClick={handleWhatsAppClick}
+            onClick={onCalcClick}
             className="group relative w-full sm:w-auto px-10 py-5 bg-white text-black font-black text-lg rounded-2xl hover:bg-blue-500 hover:text-white transition-all active:scale-95 shadow-2xl shadow-white/5 overflow-hidden"
           >
             <span className="relative z-10 flex items-center gap-3">

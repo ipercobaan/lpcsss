@@ -33,6 +33,15 @@ const Pricing: React.FC<PricingProps> = ({ onBuyClick }) => {
               key={p.id} 
               className="relative w-full max-w-xl p-8 md:p-12 rounded-[3rem] flex flex-col bg-white text-black shadow-[0_0_100px_rgba(255,0,0,0.2)] transition-transform hover:scale-[1.02] duration-500 border-4 border-red-600"
             >
+              {/* Founding Member Seal */}
+              <div className="absolute -right-6 -top-6 w-32 h-32 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full border-4 border-white shadow-2xl flex flex-col items-center justify-center p-4 rotate-12 z-30">
+                 <span className="text-[8px] font-black text-black/60 uppercase tracking-widest mb-1">Eksklusif</span>
+                 <span className="text-[11px] font-black text-black leading-none text-center uppercase italic">Founding Member</span>
+                 <div className="mt-1 flex gap-1">
+                    {[1,2,3,4,5].map(i => <span key={i} className="text-[8px]">⭐</span>)}
+                 </div>
+              </div>
+
               <div className="absolute -top-7 left-1/2 -translate-x-1/2 px-8 py-3 bg-red-600 text-white text-sm font-black tracking-widest uppercase rounded-full shadow-2xl animate-bounce whitespace-nowrap z-20">
                 TERBATAS 26 ORANG SAJA
               </div>
@@ -45,7 +54,7 @@ const Pricing: React.FC<PricingProps> = ({ onBuyClick }) => {
                 {/* Scarcity Progress Bar */}
                 <div className="max-w-xs mx-auto mb-8 bg-zinc-50 p-4 rounded-3xl border border-zinc-100">
                    <div className="flex justify-between items-end mb-2">
-                      <span className="text-[10px] font-black uppercase text-red-600 italic">Slot Hampir Habis!</span>
+                      <span className="text-[10px] font-black uppercase text-red-600 italic">Slot Founding Member!</span>
                       <span className="text-[10px] font-black uppercase text-zinc-400 italic">21/26 Terisi</span>
                    </div>
                    <div className="h-3 bg-zinc-200 rounded-full overflow-hidden">
@@ -81,12 +90,14 @@ const Pricing: React.FC<PricingProps> = ({ onBuyClick }) => {
               <div className="grid sm:grid-cols-2 gap-4 mb-12">
                 {p.features.map((f, i) => (
                   <div key={i} className="flex items-center text-sm font-bold text-zinc-700">
-                    <div className="w-5 h-5 mr-3 bg-black text-white rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className={`w-5 h-5 mr-3 rounded-full flex items-center justify-center flex-shrink-0 ${f.includes('Founding') || f.includes('Priority') ? 'bg-amber-500 text-white' : 'bg-black text-white'}`}>
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7"></path>
                       </svg>
                     </div>
-                    {f}
+                    <span className={f.includes('Founding') || f.includes('Priority') ? 'text-amber-600 font-black italic underline decoration-amber-200' : ''}>
+                      {f}
+                    </span>
                   </div>
                 ))}
               </div>

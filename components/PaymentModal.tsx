@@ -18,6 +18,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ product, onClose }) => {
   const [isUploading, setIsUploading] = useState(false);
   const [receiptUrl, setReceiptUrl] = useState<string | null>(null);
   const [userName, setUserName] = useState('');
+  const [email, setEmail] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleCopy = (text: string) => {
@@ -59,11 +60,12 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ product, onClose }) => {
     const message = encodeURIComponent(
       `Halo Blackframe Studio! Saya ingin konfirmasi pembayaran Special Akhir Tahun.\n\n` +
       `👤 Nama: ${userName || 'Customer'}\n` +
+      `📧 Email: ${email || '-'}\n` +
       `📦 Produk: ${product.name}\n` +
       `💰 Total: IDR ${product.price.toLocaleString()}\n` +
       `💳 Metode: ${selectedMethod.bankName}\n` +
       `🖼️ Bukti Bayar: ${receiptUrl || 'Terlampir di chat'}\n\n` +
-      `Mohon segera aktifkan akses engine saya. Terima kasih!`
+      `Mohon segera aktifkan akses engine saya ke email tersebut. Terima kasih!`
     );
     
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
@@ -103,14 +105,23 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ product, onClose }) => {
           {!selectedMethod ? (
             <div className="space-y-6">
               <div>
-                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-4 block">1. Masukkan Nama Lengkap</label>
-                <input 
-                  type="text" 
-                  value={userName}
-                  onChange={(e) => setUserName(e.target.value)}
-                  placeholder="Nama Lengkap Anda"
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500/50 transition-all font-bold text-lg"
-                />
+                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-4 block">1. Masukkan Identitas</label>
+                <div className="space-y-4">
+                  <input 
+                    type="text" 
+                    value={userName}
+                    onChange={(e) => setUserName(e.target.value)}
+                    placeholder="Nama Lengkap Anda"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500/50 transition-all font-bold text-lg"
+                  />
+                  <input 
+                    type="email" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Alamat Email (Untuk Pengiriman Lisensi)"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500/50 transition-all font-bold text-lg"
+                  />
+                </div>
               </div>
               <div>
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-4 block">2. Pilih Metode Pembayaran</label>
@@ -193,9 +204,9 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ product, onClose }) => {
 
         <div className="p-8 bg-black/50 border-t border-white/5">
           <button 
-            disabled={!selectedMethod || !userName || isUploading}
+            disabled={!selectedMethod || !userName || !email || isUploading}
             onClick={handleConfirm}
-            className={`w-full py-7 rounded-[2rem] font-black uppercase italic text-xl flex items-center justify-center gap-3 transition-all ${selectedMethod && userName && !isUploading ? 'bg-blue-600 text-white shadow-xl hover:bg-blue-500 active:scale-95' : 'bg-white/5 text-white/10 cursor-not-allowed'}`}
+            className={`w-full py-7 rounded-[2rem] font-black uppercase italic text-xl flex items-center justify-center gap-3 transition-all ${selectedMethod && userName && email && !isUploading ? 'bg-blue-600 text-white shadow-xl hover:bg-blue-500 active:scale-95' : 'bg-white/5 text-white/10 cursor-not-allowed'}`}
           >
             {isUploading ? 'MENGUPLOAD...' : 'KONFIRMASI VIA WHATSAPP'}
           </button>
