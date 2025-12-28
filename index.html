@@ -42,6 +42,29 @@
       .animate-fade-in {
         animation: fade-in 0.8s ease-out forwards;
       }
+      /* Marquee Animations */
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      @keyframes marquee-reverse {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+      }
+      .animate-marquee {
+        display: flex;
+        width: max-content;
+        animation: marquee 40s linear infinite;
+      }
+      .animate-marquee-reverse {
+        display: flex;
+        width: max-content;
+        animation: marquee-reverse 50s linear infinite;
+      }
+      .pause-on-hover:hover .animate-marquee,
+      .pause-on-hover:hover .animate-marquee-reverse {
+        animation-play-state: paused;
+      }
     </style>
   <script type="importmap">
 {
@@ -49,8 +72,8 @@
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "vite": "https://esm.sh/vite@^7.3.0"
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>

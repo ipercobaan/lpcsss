@@ -10,10 +10,10 @@ export const PRODUCTS: Product[] = [
     originalPrice: 2500000,
     features: [
       'Akses Semua Fitur AI Automation',
-      'Live atau Post Youtube & Facebook',
+      'Founding Member Badge (Eksklusif)',
+      'Priority Beta Access Fitur Baru',
       'Paste Editor & Auto Clipper',
       'Lisensi Lifetime (Sekali Bayar)',
-      'Update Gratis Selamanya',
       'Grup Support Eksklusif'
     ],
     isPopular: true

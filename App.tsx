@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
+import TopAnnouncement from './components/TopAnnouncement';
 import Hero from './components/Hero';
 import ProblemSection from './components/ProblemSection';
 import SolutionSection from './components/SolutionSection';
@@ -11,14 +12,20 @@ import DetailedFeatures from './components/DetailedFeatures';
 import TargetAudience from './components/TargetAudience';
 import Comparison from './components/Comparison';
 import Results from './components/Results';
+import BonusSection from './components/BonusSection';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
+import SupportSection from './components/SupportSection';
+import Footer from './components/Footer';
 import PaymentModal from './components/PaymentModal';
+import MonetizationCalculator from './components/MonetizationCalculator';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 import { Product } from './types';
 
 const App: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
 
   const handleBuyNow = (product: Product) => {
     setSelectedProduct(product);
@@ -36,10 +43,14 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white selection:bg-blue-500/30">
+      <TopAnnouncement />
       <Navbar />
       
       <main>
-        <Hero onCtaClick={scrollToPricing} />
+        <Hero 
+          onCtaClick={scrollToPricing} 
+          onCalcClick={() => setIsCalculatorOpen(true)} 
+        />
         <ProblemSection />
         <SolutionSection />
         <Features />
@@ -49,9 +60,18 @@ const App: React.FC = () => {
         <TargetAudience />
         <Comparison />
         <Results />
+        <BonusSection />
         <Pricing onBuyClick={handleBuyNow} />
         <FAQ />
+        <SupportSection />
       </main>
+
+      <Footer />
+      <FloatingWhatsApp />
+
+      {isCalculatorOpen && (
+        <MonetizationCalculator onClose={() => setIsCalculatorOpen(false)} onAction={scrollToPricing} />
+      )}
 
       {isModalOpen && selectedProduct && (
         <PaymentModal 
