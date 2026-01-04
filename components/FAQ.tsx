@@ -15,7 +15,7 @@ const FAQ: React.FC = () => {
     },
     {
       q: "Butuh API key berbayar?",
-      a: "Tidak, memang perlu API tapi hanya API gratis. Dan kedepannya bakal ada upgrade yang memungkinkan penggunaan tanpa API sama sekali."
+      a: "Tidak, memang perlu API tapi hanya API gratis. Dan sekarang sudah tersedia Offline & Remot tanpa api key sama sekali."
     },
     {
       q: "Cocok buat pemula?",

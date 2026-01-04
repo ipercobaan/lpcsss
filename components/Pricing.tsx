@@ -17,7 +17,7 @@ const Pricing: React.FC<PricingProps> = ({ onBuyClick }) => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 mb-4">
              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-             <span className="text-[10px] font-black tracking-[0.2em] uppercase text-red-400 italic">Promo Berakhir 3 Januari</span>
+             <span className="text-[10px] font-black tracking-[0.2em] uppercase text-red-400 italic">Promo Berakhir 12 Januari</span>
           </div>
           <h2 className="text-4xl md:text-7xl font-black mb-4 uppercase italic tracking-tighter">
             SPECIAL <span className="text-blue-500">AKHIR TAHUN</span>
@@ -43,7 +43,7 @@ const Pricing: React.FC<PricingProps> = ({ onBuyClick }) => {
               </div>
 
               <div className="absolute -top-7 left-1/2 -translate-x-1/2 px-8 py-3 bg-red-600 text-white text-sm font-black tracking-widest uppercase rounded-full shadow-2xl animate-bounce whitespace-nowrap z-20">
-                TERBATAS 26 ORANG SAJA
+                TERBATAS 100 ORANG SAJA
               </div>
               
               <div className="mb-8 text-center mt-6">
@@ -55,10 +55,10 @@ const Pricing: React.FC<PricingProps> = ({ onBuyClick }) => {
                 <div className="max-w-xs mx-auto mb-8 bg-zinc-50 p-4 rounded-3xl border border-zinc-100">
                    <div className="flex justify-between items-end mb-2">
                       <span className="text-[10px] font-black uppercase text-red-600 italic">Slot Founding Member!</span>
-                      <span className="text-[10px] font-black uppercase text-zinc-400 italic">21/26 Terisi</span>
+                      <span className="text-[10px] font-black uppercase text-zinc-400 italic">21/100 Terisi</span>
                    </div>
                    <div className="h-3 bg-zinc-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-red-600 w-[80%] animate-pulse rounded-full"></div>
+                      <div className="h-full bg-red-600 w-[21%] animate-pulse rounded-full"></div>
                    </div>
                 </div>
               </div>
@@ -81,7 +81,7 @@ const Pricing: React.FC<PricingProps> = ({ onBuyClick }) => {
                       LISENSI LIFETIME (SEKALI BAYAR)
                     </span>
                     <p className="text-[10px] font-bold text-zinc-400 mt-3 uppercase italic tracking-tighter">
-                      Penawaran Berakhir 3 Januari 2025
+                      Penawaran Berakhir 12 Januari 2025
                     </p>
                   </div>
                 </div>

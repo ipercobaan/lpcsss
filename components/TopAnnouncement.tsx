@@ -10,7 +10,7 @@ const TopAnnouncement: React.FC = () => {
           <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
         </span>
         <p className="text-[10px] md:text-xs font-black text-black uppercase tracking-[0.15em] italic">
-          SLOT FOUNDING MEMBER v1.0: <span className="bg-black text-white px-2 py-0.5 rounded ml-1">TERTINGGAL 14 / 100</span>
+          SLOT FOUNDING MEMBER v1.0: <span className="bg-black text-white px-2 py-0.5 rounded ml-1 tracking-tighter">21 / 100 TERISI</span>
         </p>
       </div>
     </div>
