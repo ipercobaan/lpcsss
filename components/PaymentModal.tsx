@@ -72,7 +72,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ product, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+    <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 sm:p-6">
       <div className="absolute inset-0 bg-black/95 backdrop-blur-md" onClick={onClose}></div>
       <div className="relative w-full max-w-xl bg-zinc-900 border border-white/10 rounded-[3rem] shadow-[0_0_100px_rgba(59,130,246,0.1)] overflow-hidden animate-scale-up">
         
@@ -80,11 +80,11 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ product, onClose }) => {
           <div className="flex justify-between items-start">
             <div>
               <h2 className="text-2xl font-black tracking-tighter mb-1 uppercase italic">
-                CHECKOUT <span className="text-blue-500">ENGINE</span>
+                SECURE <span className="text-blue-500">CHECKOUT</span>
               </h2>
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/20 rounded-full border border-red-500/30">
-                <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span>
-                <span className="text-[9px] font-black uppercase text-red-400">Special Akhir Tahun</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 rounded-full border border-green-500/20">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                <span className="text-[9px] font-black uppercase text-green-400">SSL Encrypted Transaction</span>
               </div>
             </div>
             <button onClick={onClose} className="p-2 hover:bg-white/10 rounded-full transition-colors">
@@ -93,19 +93,21 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ product, onClose }) => {
           </div>
         </div>
 
-        <div className="p-8 max-h-[70vh] overflow-y-auto custom-scrollbar">
-          <div className="p-6 rounded-[2rem] bg-white/5 border border-white/10 mb-8">
-            <h4 className="font-black text-xl mb-2 italic tracking-tight">{product.name}</h4>
-            <div className="flex justify-between items-center">
-               <span className="text-xs text-white/30 line-through">IDR {product.originalPrice?.toLocaleString()}</span>
-               <span className="text-3xl font-black text-white">IDR {product.price.toLocaleString()}</span>
+        <div className="p-8 max-h-[60vh] overflow-y-auto custom-scrollbar">
+          <div className="p-6 rounded-[2rem] bg-white/5 border border-white/10 mb-8 flex justify-between items-center">
+            <div>
+              <h4 className="font-black text-lg italic tracking-tight uppercase leading-none">{product.name}</h4>
+              <p className="text-[10px] text-white/30 font-bold uppercase tracking-widest mt-1 italic">Lifetime Access Engine</p>
+            </div>
+            <div className="text-right">
+               <span className="text-2xl font-black text-white">IDR {product.price.toLocaleString()}</span>
             </div>
           </div>
 
           {!selectedMethod ? (
             <div className="space-y-6">
               <div>
-                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-4 block">1. Masukkan Identitas</label>
+                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-4 block italic">1. Identitas Lisensi</label>
                 <div className="space-y-4">
                   <input 
                     type="text" 
@@ -118,13 +120,13 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ product, onClose }) => {
                     type="email" 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Alamat Email (Untuk Pengiriman Lisensi)"
+                    placeholder="Alamat Email (Lisensi Dikirim Kesini)"
                     className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500/50 transition-all font-bold text-lg"
                   />
                 </div>
               </div>
               <div>
-                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-4 block">2. Pilih Metode Pembayaran</label>
+                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-4 block italic">2. Metode Pembayaran</label>
                 <div className="grid gap-3">
                   {PAYMENT_METHODS.map((method) => (
                     <button
@@ -186,13 +188,13 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ product, onClose }) => {
               </div>
 
               <div className="space-y-4">
-                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 block">3. Upload Bukti Transfer</label>
+                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 block italic">3. Upload Bukti Transfer</label>
                 <div onClick={() => !isUploading && fileInputRef.current?.click()} className={`relative p-10 border-2 border-dashed rounded-[2.5rem] transition-all cursor-pointer flex flex-col items-center justify-center gap-4 ${receiptUrl ? 'border-green-500/50 bg-green-500/5' : 'border-white/10 bg-white/5 hover:border-blue-500/50'}`}>
                   <input type="file" ref={fileInputRef} className="hidden" accept="image/*" onChange={handleFileUpload} />
                   {isUploading ? (
                     <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                   ) : receiptUrl ? (
-                    <span className="text-[10px] font-black uppercase text-green-400 text-center">BUKTI TERUPLOAD!<br/><span className="text-[8px] opacity-60">Klik untuk ganti</span></span>
+                    <span className="text-[10px] font-black uppercase text-green-400 text-center">BUKTI TERUPLOAD!<br/><span className="text-[8px] opacity-60 italic">Lisensi Siap Diaktifkan</span></span>
                   ) : (
                     <span className="text-[10px] font-black uppercase text-white/40 text-center">Klik untuk upload bukti bayar</span>
                   )}
@@ -202,7 +204,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ product, onClose }) => {
           )}
         </div>
 
-        <div className="p-8 bg-black/50 border-t border-white/5">
+        <div className="p-8 bg-black/50 border-t border-white/5 flex flex-col gap-4">
           <button 
             disabled={!selectedMethod || !userName || !email || isUploading}
             onClick={handleConfirm}
@@ -210,6 +212,11 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ product, onClose }) => {
           >
             {isUploading ? 'MENGUPLOAD...' : 'KONFIRMASI VIA WHATSAPP'}
           </button>
+          <div className="flex justify-center items-center gap-6 opacity-40 grayscale">
+             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/SSL_logo.png" className="h-4" alt="SSL" />
+             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo_QRIS.svg" className="h-3" alt="QRIS" />
+             <span className="text-[8px] font-black uppercase tracking-widest text-white">Verified Software</span>
+          </div>
         </div>
       </div>
     </div>
