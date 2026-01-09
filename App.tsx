@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import TopAnnouncement from './components/TopAnnouncement';
 import Hero from './components/Hero';
+import Workflow from './components/Workflow';
 import ProblemSection from './components/ProblemSection';
 import SolutionSection from './components/SolutionSection';
 import Features from './components/Features';
@@ -20,6 +21,7 @@ import Footer from './components/Footer';
 import PaymentModal from './components/PaymentModal';
 import MonetizationCalculator from './components/MonetizationCalculator';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import LiveActivity from './components/LiveActivity';
 import { Product } from './types';
 
 const App: React.FC = () => {
@@ -51,6 +53,7 @@ const App: React.FC = () => {
           onCtaClick={scrollToPricing} 
           onCalcClick={() => setIsCalculatorOpen(true)} 
         />
+        <Workflow />
         <ProblemSection />
         <SolutionSection />
         <Features />
@@ -68,6 +71,7 @@ const App: React.FC = () => {
 
       <Footer />
       <FloatingWhatsApp />
+      <LiveActivity />
 
       {isCalculatorOpen && (
         <MonetizationCalculator onClose={() => setIsCalculatorOpen(false)} onAction={scrollToPricing} />
