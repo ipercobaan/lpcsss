@@ -1,6 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll, useSpring } from 'motion/react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import TopAnnouncement from './components/TopAnnouncement';
 import Hero from './components/Hero';
@@ -30,13 +29,6 @@ const App: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
 
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
   const handleBuyNow = (product: Product) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
@@ -52,21 +44,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-blue-500/30 overflow-x-hidden">
-      {/* Scroll Progress Bar */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-blue-500 origin-left z-[100] shadow-[0_0_15px_rgba(59,130,246,0.8)]"
-        style={{ scaleX }}
-      />
-
+    <div className="min-h-screen bg-black text-white selection:bg-blue-500/30">
       <TopAnnouncement />
       <Navbar />
       
-      <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
+      <main>
         <Hero 
           onCtaClick={scrollToPricing} 
           onCalcClick={() => setIsCalculatorOpen(true)} 
@@ -85,29 +67,22 @@ const App: React.FC = () => {
         <Pricing onBuyClick={handleBuyNow} />
         <FAQ />
         <SupportSection />
-      </motion.main>
+      </main>
 
       <Footer />
       <FloatingWhatsApp />
       <LiveActivity />
 
-      <AnimatePresence>
-        {isCalculatorOpen && (
-          <MonetizationCalculator 
-            onClose={() => setIsCalculatorOpen(false)} 
-            onAction={scrollToPricing} 
-          />
-        )}
-      </AnimatePresence>
+      {isCalculatorOpen && (
+        <MonetizationCalculator onClose={() => setIsCalculatorOpen(false)} onAction={scrollToPricing} />
+      )}
 
-      <AnimatePresence>
-        {isModalOpen && selectedProduct && (
-          <PaymentModal 
-            product={selectedProduct} 
-            onClose={closeModal} 
-          />
-        )}
-      </AnimatePresence>
+      {isModalOpen && selectedProduct && (
+        <PaymentModal 
+          product={selectedProduct} 
+          onClose={closeModal} 
+        />
+      )}
     </div>
   );
 };
