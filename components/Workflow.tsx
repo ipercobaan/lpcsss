@@ -24,30 +24,29 @@ const Workflow: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-black relative">
+    <section className="py-24 bg-black relative border-y border-white/5 grid-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-           <h2 className="text-3xl md:text-5xl font-black mb-4 uppercase italic tracking-tighter">
-            3 LANGKAH <span className="text-blue-500">DOMINASI</span> PASAR
+        <div className="text-center mb-24">
+           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-blue-500/10 border border-blue-500/20 mb-6 font-mono text-[10px] uppercase tracking-widest text-blue-400">
+             <span className="w-1.5 h-1.5 bg-blue-500"></span>
+             <span>Operational Pipeline</span>
+          </div>
+           <h2 className="text-4xl md:text-7xl font-serif font-bold mb-6 text-white">
+            The <span className="italic text-blue-500">Process</span>
           </h2>
-          <p className="text-gray-500 font-medium italic">"Software kami bekerja, Anda yang pegang kendali penuh."</p>
+          <p className="text-gray-500 font-light max-w-xl mx-auto">Systematic content generation from source to distribution.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-0 border border-white/10 divide-x divide-white/10">
           {steps.map((step, i) => (
-            <div key={i} className="relative group p-10 rounded-[3rem] bg-white/[0.02] border border-white/5 hover:border-blue-500/30 transition-all">
-              <span className="absolute -top-6 -left-4 text-7xl font-black text-white/5 italic group-hover:text-blue-500/10 transition-colors">
-                {step.num}
+            <div key={i} className="relative group p-12 bg-white/[0.01] hover:bg-white/[0.03] transition-all">
+              <span className="font-mono text-[10px] text-blue-500/40 uppercase tracking-[0.3em] mb-8 block">
+                Phase {step.num}
               </span>
-              <div className="text-5xl mb-6 relative z-10">{step.icon}</div>
-              <h3 className="text-xl font-black mb-4 uppercase italic tracking-tight relative z-10">{step.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed relative z-10">{step.desc}</p>
+              <h3 className="text-2xl font-serif font-bold mb-6 text-white leading-tight">{step.title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed font-light mb-8">{step.desc}</p>
               
-              {i < 2 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 translate-x-1/2 -translate-y-1/2 text-blue-500/20 text-4xl">
-                   ➜
-                </div>
-              )}
+              <div className="h-[1px] w-12 bg-blue-500/30 group-hover:w-full transition-all duration-700"></div>
             </div>
           ))}
         </div>

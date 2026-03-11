@@ -28,7 +28,7 @@ const activities = [
   "User dari Gorontalo baru saja klaim bonus 127 Master LUTs.",
   "Seseorang dari Jayapura baru saja join sebagai Founding Member.",
   "User dari Batam baru saja divalidasi oleh admin.",
-  "Seseorang dari Mataram baru saja mengamankan harga promo 149rb.",
+  "Seseorang dari Mataram baru saja mengamankan harga promo DARI 149K KE 99 K.",
   "User dari Pontianak baru saja aktifasi akses penuh.",
   "Seseorang dari Jambi baru saja masuk ke list prioritas.",
   "Baru saja terjual: Slot Founding Member ke-26."

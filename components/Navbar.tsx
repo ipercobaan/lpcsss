@@ -3,26 +3,26 @@ import React from 'react';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="fixed top-9 md:top-10 left-0 right-0 z-50 glass-effect border-b border-white/5 mx-auto max-w-7xl md:rounded-full mt-2 transition-all duration-300">
-      <div className="px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <a href="#home" className="flex items-center space-x-2 group">
-            <div className="w-8 h-8 bg-white flex items-center justify-center rounded-lg shadow-xl shadow-white/5 group-hover:scale-110 transition-transform">
-              <span className="text-black font-black text-lg italic">B</span>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          <a href="#home" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 bg-white flex items-center justify-center rounded-none shadow-2xl group-hover:bg-blue-600 transition-colors">
+              <span className="text-black group-hover:text-white font-serif font-bold text-xl italic">B</span>
             </div>
-            <span className="text-lg font-bold tracking-tighter uppercase">Blackframe <span className="text-white/50">Studio</span></span>
+            <span className="text-xl font-serif font-bold tracking-tight uppercase text-white">Blackframe <span className="text-white/40 font-light italic">Studio</span></span>
           </a>
           
-          <div className="hidden lg:flex items-center space-x-8">
-            <a href="#home" className="text-[10px] font-black uppercase tracking-widest hover:text-blue-500 transition-colors text-white/70">Home</a>
-            <a href="#features" className="text-[10px] font-black uppercase tracking-widest hover:text-blue-500 transition-colors text-white/70">Features</a>
-            <a href="#bonus" className="text-[10px] font-black uppercase tracking-widest hover:text-blue-500 transition-colors text-white/70">Bonus</a>
-            <a href="#pricing" className="text-[10px] font-black uppercase tracking-widest hover:text-blue-500 transition-colors text-white/70">Pricing</a>
+          <div className="hidden lg:flex items-center space-x-10">
+            <a href="#home" className="font-mono text-[10px] uppercase tracking-[0.2em] hover:text-blue-500 transition-colors text-white/60">01. Home</a>
+            <a href="#features" className="font-mono text-[10px] uppercase tracking-[0.2em] hover:text-blue-500 transition-colors text-white/60">02. Features</a>
+            <a href="#bonus" className="font-mono text-[10px] uppercase tracking-[0.2em] hover:text-blue-500 transition-colors text-white/60">03. Bonus</a>
+            <a href="#pricing" className="font-mono text-[10px] uppercase tracking-[0.2em] hover:text-blue-500 transition-colors text-white/60">04. Pricing</a>
             <a 
               href="#pricing"
-              className="px-5 py-2 bg-white text-black text-[10px] font-black uppercase tracking-widest rounded-full hover:bg-blue-600 hover:text-white transition-all active:scale-95 italic shadow-lg shadow-white/5"
+              className="px-8 py-3 bg-white text-black text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-blue-600 hover:text-white transition-all active:scale-95"
             >
-              Ambil Promo
+              Get Access
             </a>
           </div>
 

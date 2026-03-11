@@ -20,7 +20,7 @@ const Pricing: React.FC<PricingProps> = ({ onBuyClick }) => {
              <span className="text-[10px] font-black tracking-[0.2em] uppercase text-red-400 italic">Kesempatan Terbatas</span>
           </div>
           <h2 className="text-4xl md:text-7xl font-black mb-4 uppercase italic tracking-tighter">
-            LIFETIME <span className="text-blue-500">OFFER</span>
+            PROMO <span className="text-blue-500">RAMADHAN</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto italic font-medium">
             "Dapatkan akses penuh ke engine Blackframe Studio dengan harga khusus founding member."
@@ -47,9 +47,12 @@ const Pricing: React.FC<PricingProps> = ({ onBuyClick }) => {
               </div>
               
               <div className="mb-8 text-center mt-6">
-                <h3 className="text-2xl font-black mb-3 uppercase tracking-tighter italic text-zinc-800 leading-tight">
+                <h3 className="text-2xl font-black mb-1 uppercase tracking-tighter italic text-zinc-800 leading-tight">
                   LIFETIME ACCESS ENGINE
                 </h3>
+                <p className="text-sm font-black text-red-600 uppercase italic tracking-tighter mb-3">
+                  DARI 149K KE 99 K
+                </p>
                 
                 {/* Scarcity Progress Bar */}
                 <div className="max-w-xs mx-auto mb-8 bg-zinc-50 p-4 rounded-3xl border border-zinc-100">
@@ -73,7 +76,7 @@ const Pricing: React.FC<PricingProps> = ({ onBuyClick }) => {
                   </div>
                   <div className="flex items-baseline gap-2">
                     <span className="text-6xl md:text-8xl font-black italic tracking-tighter text-black">
-                      149<span className="text-2xl font-black uppercase ml-1">K</span>
+                      99<span className="text-2xl font-black uppercase ml-1">K</span>
                     </span>
                   </div>
                   <div className="mt-6 flex flex-col items-center">
@@ -81,7 +84,10 @@ const Pricing: React.FC<PricingProps> = ({ onBuyClick }) => {
                       LISENSI LIFETIME (SEKALI BAYAR)
                     </span>
                     <p className="text-[10px] font-bold text-zinc-400 mt-3 uppercase italic tracking-tighter">
-                      Penawaran Berakhir 20 Januari 2026
+                      Penawaran Berakhir 21 Maret 2026
+                    </p>
+                    <p className="text-[10px] font-black text-red-600 mt-3 uppercase italic tracking-widest bg-red-50 px-4 py-1 rounded-full animate-pulse border border-red-200">
+                      *SETELAH PROMO BERAKHIR HARGA MENJADI 249K
                     </p>
                   </div>
                 </div>
