@@ -4,9 +4,9 @@ import { Product, PaymentMethod } from './types';
 export const PRODUCTS: Product[] = [
   {
     id: 'lifetime-master-blackframe',
-    name: 'Blackframe Studio - Special Akhir Tahun',
+    name: 'Blackframe Studio - Promo Ramadhan',
     description: 'Engine Pembuatan Video Otomatis. Akses Lifetime Tanpa Biaya Langganan.',
-    price: 149000,
+    price: 99000,
     originalPrice: 2500000,
     features: [
       'Akses Semua Fitur AI Automation',
