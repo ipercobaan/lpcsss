@@ -164,7 +164,7 @@ const DetailedFeatures: React.FC = () => {
 
               {/* Decorative Elements */}
               <div className="absolute -bottom-6 -right-6 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity duration-500">
-                {React.cloneElement(cat.icon as React.ReactElement<any>, { className: "w-32 h-32" })}
+                {React.cloneElement(cat.icon as React.ReactElement<{ className?: string }>, { className: "w-32 h-32" })}
               </div>
               
               {/* Hover Glow */}
@@ -233,4 +233,3 @@ const DetailedFeatures: React.FC = () => {
 };
 
 export default DetailedFeatures;
-
