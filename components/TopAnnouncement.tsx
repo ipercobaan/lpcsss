@@ -10,7 +10,7 @@ const TopAnnouncement: React.FC = () => {
           <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
         </span>
         <p className="text-[10px] md:text-xs font-black text-black uppercase tracking-[0.15em] italic">
-          PROMO RAMADHAN: <span className="bg-black text-white px-2 py-0.5 rounded ml-1 tracking-tighter">DARI 149K KE 99 K</span> penawaran sampai tanggal 21. SETELAH PROMO BERAKHIR HARGA MENJADI 249K
+          PROMO RAMADHAN HANYA 99K <span className="bg-black text-white px-2 py-0.5 rounded ml-1 tracking-tighter">SAMPAI DENGAN 23 MARET</span>
         </p>
       </div>
     </div>
