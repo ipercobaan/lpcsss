@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Scissors, Gamepad2, PenTool, Layers, Repeat, Palette, Calendar, ArrowUpRight } from 'lucide-react';
 
 const Features: React.FC = () => {

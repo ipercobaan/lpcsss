@@ -1,6 +1,6 @@
 
 import React, { useState, useRef } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ShieldCheck, Zap, Sparkles } from 'lucide-react';
 
 const PhotoDemo: React.FC = () => {

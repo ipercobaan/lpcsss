@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Twitter, Instagram, Youtube, Github, Mail, MapPin, Phone, Zap } from 'lucide-react';
 
 const Footer: React.FC = () => {
