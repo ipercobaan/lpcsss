@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface CalculatorProps {
   onClose: () => void;
@@ -10,6 +10,8 @@ const MonetizationCalculator: React.FC<CalculatorProps> = ({ onClose, onAction }
   const [videoCount, setVideoCount] = useState(5);
   const [avgViews, setAvgViews] = useState(50000);
   const [platform, setPlatform] = useState<'tiktok' | 'youtube' | 'reels'>('tiktok');
+  const [monthlyRevenue, setMonthlyRevenue] = useState(0);
+  const [hoursSaved, setHoursSaved] = useState(0);
 
   // Estimates based on standard short-form RPM (Revenue per 1000 views)
   // IDR 300 - 1000 for local market short content
@@ -19,14 +21,17 @@ const MonetizationCalculator: React.FC<CalculatorProps> = ({ onClose, onAction }
     reels: 500
   };
 
-  // Calculation: (Videos per day * 30 days) * (Avg Views / 1000) * RPM
-  const totalViewsMonthly = (videoCount * 30) * avgViews;
-  const monthlyRevenue = (totalViewsMonthly / 1000) * rpmRates[platform];
+  useEffect(() => {
+    // Calculation: (Videos per day * 30 days) * (Avg Views / 1000) * RPM
+    const totalViewsMonthly = (videoCount * 30) * avgViews;
+    const revenue = (totalViewsMonthly / 1000) * rpmRates[platform];
+    setMonthlyRevenue(revenue);
 
-  // Time saved calculation: Manual 2 hours/video vs Blackframe 5 mins/video
-  const manualMinutes = videoCount * 30 * 120; // 2 hours
-  const blackframeMinutes = videoCount * 30 * 5; // 5 mins
-  const hoursSaved = Math.round((manualMinutes - blackframeMinutes) / 60);
+    // Time saved calculation: Manual 2 hours/video vs Blackframe 5 mins/video
+    const manualMinutes = videoCount * 30 * 120; // 2 hours
+    const blackframeMinutes = videoCount * 30 * 5; // 5 mins
+    setHoursSaved(Math.round((manualMinutes - blackframeMinutes) / 60));
+  }, [videoCount, avgViews, platform]);
 
   return (
     <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">

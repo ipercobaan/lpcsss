@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 
 const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
