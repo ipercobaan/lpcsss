@@ -6,38 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blackframe Studio | High-End Video Engine</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-      :root {
-        --bg: #000;
-        --ink: #fff;
-        --line: rgba(255, 255, 255, 0.1);
-        --accent: #3b82f6;
-      }
       body {
         font-family: 'Inter', sans-serif;
-        background-color: var(--bg);
-        color: var(--ink);
+        background-color: #000;
+        color: #fff;
       }
-      .font-mono { font-family: 'JetBrains Mono', monospace; }
-      .font-serif { font-family: 'Playfair Display', serif; }
-      
-      /* Technical Grid Background */
-      .grid-bg {
-        background-image: 
-          linear-gradient(var(--line) 1px, transparent 1px),
-          linear-gradient(90deg, var(--line) 1px, transparent 1px);
-        background-size: 40px 40px;
-      }
-      
-      .data-border {
-        border: 1px solid var(--line);
-      }
-      
       .glass-effect {
-        background: rgba(255, 255, 255, 0.02);
+        background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(10px);
-        border: 1px solid var(--line);
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
       .custom-scrollbar::-webkit-scrollbar {
         width: 4px;
