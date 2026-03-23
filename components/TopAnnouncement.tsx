@@ -10,7 +10,7 @@ const TopAnnouncement: React.FC = () => {
           <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
         </span>
         <p className="text-[10px] md:text-xs font-black text-black uppercase tracking-[0.15em] italic">
-          PROMO RAMADHAN HANYA 99K <span className="bg-black text-white px-2 py-0.5 rounded ml-1 tracking-tighter">SAMPAI DENGAN 28 MARET</span>
+          PROMO RAMADHAN HANYA 99K <span className="bg-black text-white px-2 py-0.5 rounded ml-1 tracking-tighter">SAMPAI DENGAN 4 APRIL</span>
         </p>
       </div>
     </div>
